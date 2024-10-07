@@ -3,5 +3,5 @@ const button = document.getElementById('changeBgButton');
 
         button.addEventListener('click', () => {
             currentImage = currentImage === 1 ? 2 : 1; // Toggle between images
-            document.body.style.backgroundImage = `url('images/${currentImage}.jpg')`;
+            document.body.style.backgroundImage = `url('public/images/${currentImage}.jpg')`;
         });

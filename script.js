@@ -10,6 +10,12 @@ button.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('addButton').addEventListener("click", function() {
 
+        let newTask = prompt("Please enter the new task");
+
+        if (newTask == null || newTask === "") {
+            return;
+        }
+
         //creating taskTable
         const newDiv = document.createElement("div");
         document.getElementById("mainTable").appendChild(newDiv);
@@ -19,18 +25,18 @@ document.addEventListener("DOMContentLoaded", function() {
         //filling table with elements
         const checkDiv = document.createElement("div");
         document.getElementById("taskTable_" + Date.now()).appendChild(checkDiv);
-        checkDiv.className = "col-2";
-        checkDiv.textContent = "CheckBox";
+        checkDiv.className = "col-1";
+        checkDiv.innerHTML = "<input type='checkbox'>";
 
         const taskDiv = document.createElement("div");
         document.getElementById("taskTable_" + Date.now()).appendChild(taskDiv);
-        taskDiv.className = "col-9";
-        taskDiv.textContent = "Task";
+        taskDiv.className = "col-10";
+        taskDiv.textContent = newTask;
 
         const editDiv = document.createElement("div");
         document.getElementById("taskTable_" + Date.now()).appendChild(editDiv);
         editDiv.className = "col-1";
-        editDiv.textContent = "Pencil";
+        editDiv.textContent = "Edit";
 
     });
 });
